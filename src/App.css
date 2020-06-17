@@ -1,12 +1,14 @@
 :root {
   --black: #0d0d0d;
   --red: #ff2d2b;
+ 
 }
 
 .scoreboard {
   width: 58%;
   margin: 2rem auto;
-  background-color: #0b5402;
+  /* background-color: #0b5402; */
+  background-color: black;
   color: white;
   border-radius: 0.5rem;
   padding: 5rem;
@@ -17,7 +19,6 @@
   display: flex;
   justify-content: space-around;
   place-items: center;
-  /* height: 20rem; */
 }
 
 .home,
@@ -29,15 +30,18 @@
   place-items: center;
   border: 3px solid white;
   border-radius: 0.5rem;
-  width: 15rem;
+  /* width: 15rem; */
+  width: 25rem;
 }
 
 .home {
-  background-color: #656565;
+  /* background-color: #656565; */
+  background-color: blue;
 }
 
 .away {
-  background-color: #af750a;
+  /* background-color: #af750a; */
+  background-color: red;
 }
 
 .home__name,
@@ -87,6 +91,7 @@
   flex-direction: column;
   justify-content: space-around;
   place-items: center;
+  display: none;
 }
 
 .down__value,
