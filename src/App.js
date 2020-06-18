@@ -75,7 +75,10 @@ import "./App.css";
 //   );
 // }
 
+// export default App;
+
 //this is for soccer team
+
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
 
@@ -83,20 +86,25 @@ function App() {
 
   const [homeScore, setHomeScore] = useState(number);
   const [awayScore, setAwayScore] = useState(number);
+
+  const [homePenalty, setHomePenalty] = useState(number);
+  const [awayPenalty, setAwayPenalty] = useState(number);
+
   
 //this is a scoreboard timer
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(number);
+  const [minutes, setMinutes] = useState(number);
 
   useEffect(() => {
-    if (seconds >= 0) {
+
+    if (seconds >= 0 ) {
       setTimeout(() => setSeconds(seconds + 1), 1000);
       
     } else {
-      setSeconds('BOOOOM!');
-    }
+      setSeconds('NOOOOOOO')
+    } 
     if (minutes >= 0) {
-      setTimeout(() => setMinutes(minutes + 1), 60000);
+      setTimeout(() => setMinutes(minutes + 1), 61000);
     } else {
       setMinutes('YAYYYY')
     }
@@ -105,9 +113,15 @@ function App() {
 
 
   //creating event to added it to the click handler
-  //touchdown score is 7
+  //soccer score is 1 point
   const homeScoreGoal = () => setHomeScore(homeScore + 1);
   const awayScoreGoal = () => setAwayScore(awayScore + 1);
+
+
+//penalty score is 1 point
+  const homePointsPenalty = () => setHomePenalty(homePenalty + 1);
+  const awayPointsPenalty = () => setAwayPenalty(awayPenalty + 1);
+
 
 
   return (
@@ -126,7 +140,16 @@ function App() {
   <div className="away__score">{awayScore}</div>
           </div>
         </div>
-        <BottomRow />
+        <div className="bottomRow">
+      <div className="down">
+        <h3 className="down__title">Penalty</h3>
+  <div className="down__value">{homePenalty}</div>
+      </div>
+      <div className="quarter">
+        <h3 className="quarter__title">Penalty</h3>
+  <div className="quarter__value">{awayPenalty}</div>
+      </div>
+        </div>
       </section>
       <section className="buttons">
         <div className="homeButtons">
@@ -134,9 +157,11 @@ function App() {
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           {/* added onClick handlers with variables added before */}
           <button onClick = {homeScoreGoal} className="homeButtons__touchdown">Home Goal</button>
+          <button onClick = {homePointsPenalty} className="homeButtons__fieldGoal">Home Penalty</button>
         </div>
         <div className="awayButtons">
           <button onClick = {awayScoreGoal} className="awayButtons__touchdown">Away Goal</button>
+          <button onClick = {awayPointsPenalty} className="awayButtons__fieldGoal">Away Penalty</button>
         </div>
       </section>
     </div>
