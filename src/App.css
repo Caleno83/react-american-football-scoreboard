@@ -84,19 +84,18 @@
 }
 
 .down,
-.toGo,
-.ballOn,
+/* .toGo, */
+/* .ballOn, */
 .quarter {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   place-items: center;
-  display: none;
 }
 
 .down__value,
-.toGo__value,
-.ballOn__value,
+/* .toGo__value, */
+/* .ballOn__value, */
 .quarter__value {
   font-family: "Ozone";
   font-size: 5rem;
